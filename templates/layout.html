@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pl">
+	<head>
+		<title>Dźwięki muzyki</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='style/main.css') }}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="{{url_for('static', filename='functions.js')}}"></script>
+        {% block head_elements %}{% endblock %}
+	</head>
+	<body>
+        <div class="topnav" id="TopNav">
+            <a href="{{url_for('index')}}" class="{{'active' if request.path==url_for('index')}}">Home</a>
+            <a href="{{url_for('about')}}" class="{{'active' if request.path==url_for('about')}}">O nas</a>
+            <a href="{{url_for('members')}}" class="{{'active' if request.path==url_for('members')}}">Członkowie</a>
+            <a href="{{url_for('discography')}}" class="{{'active' if request.path==url_for('discography')}}">Dyskografia</a>
+            <a href="{{url_for('concerts')}}" class="{{'active' if request.path==url_for('concerts')}}">Koncerty</a>
+            <a href="javascript:void(0);" class="icon" onclick="toggleHamburgerMenu()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+        <div class="app-content">
+            {% block content %}{% endblock %}
+        </div>
+	</body>
+</html>
