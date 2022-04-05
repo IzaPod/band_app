@@ -5,17 +5,16 @@
 {% endblock %}
 
 {% block content %}
-<h1>Poznaj zespół</h1>
+<h1>Dyskografia</h1>
 <div>
-    {% for member in members %}
+    {% for album in albums %}
     <div class="card">
         <div class="flex-container-centered">
-            <img src={{member.image}} alt="zdjęcie {{member.name}}">
+            <img src={{album.image}} alt="okładka {{album.title}}">
         </div>
         <div class="card-info">
-            <h4><b>{{member.name}} {{member.surname}}</b></h4>
-            <p>Sprzęt: {{member.instrument}}</p>
-            <p>Ciekawostka: "{{member.fact}}"</p>
+            <h4><b>{{album.title}}</b></h4>
+            <p>Rok wydania: {{album.year}}</p>
         </div>
     </div>
 {% endfor %}

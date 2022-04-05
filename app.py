@@ -21,11 +21,11 @@ def members():
 
 @app.route("/discography")
 def discography():
-    return render_template("members.html", request=request)
-
-@app.route("/concerts")
-def concerts():
-    return render_template("members.html", request=request)
+    albums = [
+        {"id": "1", "title": "Nie ma letko", "year": "2021", "image": "/static/img/album1.png"},
+        {"id": "2", "title": "Kiedyś to było", "year": "2020", "image": "/static/img/album2.jpg"},
+    ]
+    return render_template("discography.html", request=request, albums=albums)
 
 if __name__ == "__main__":
     app.run(debug=True)

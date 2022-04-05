@@ -1,17 +1,17 @@
-.member-card {
+.card {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     border-radius: 5px;
     display: flex;
     flex-direction: row;
 }
-.member-card:not(:last-child) {
+.card:not(:last-child) {
     margin-bottom: 20px;
 }
-.member-card:hover {
+.card:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
-.member-card-info {
+.card-info {
     padding: 2px 16px;
 }
 
@@ -22,7 +22,7 @@ img {
 }
 
 @media screen and (max-width: 500px) {
-    .member-card {
+    .card {
         flex-direction: column;
     }
 }
