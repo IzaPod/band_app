@@ -4,8 +4,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    user = {"username": "Zenek"}
-    return render_template("index.html", user=user, request=request)
+    return render_template("index.html", request=request)
 
 @app.route("/about")
 def about():
@@ -13,7 +12,12 @@ def about():
 
 @app.route("/members")
 def members():
-    return render_template("members.html", request=request)
+    members = [
+        {"name": "Arleta", "surname": "Marleta", "image": "/static/img/arleta.png", "instrument": "gitara", "fact": "Nie lubię słodyczy"},
+        {"name": "Marek", "surname": "Tralek", "image": "/static/img/marek.png", "instrument": "perkusja", "fact": "Nigdy niczego nie złamałem"},
+        {"name": "Karol", "surname": "Barol", "image": "/static/img/karol.png", "instrument": "wokal", "fact": "Pochodzę z Hiszpanii"},
+    ]
+    return render_template("members.html", request=request, members=members)
 
 @app.route("/discography")
 def discography():

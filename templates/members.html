@@ -1,6 +1,23 @@
 {% extends "layout.html" %}
+
+{% block head_elements %}
+<link rel="stylesheet" href="{{ url_for('static', filename='style/members.css') }}">
+{% endblock %}
+
 {% block content %}
-<h1>Zespół</h1>
-<p class="important">
-    sfbg
+<h1>Poznaj zespół</h1>
+<div>
+    {% for member in members %}
+    <div class="member-card">
+        <div class="flex-container-centered">
+            <img src={{member.image}} alt="zdjęcie {{member.name}}">
+        </div>
+        <div class="member-card-info">
+            <h4><b>{{member.name}} {{member.surname}}</b></h4>
+            <p>Sprzęt: {{member.instrument}}</p>
+            <p>Ciekawostka: "{{member.fact}}"</p>
+        </div>
+    </div>
+{% endfor %}
+</div>
 {% endblock %}
