@@ -10,12 +10,12 @@
     {% for member in members %}
     <div class="card">
         <div class="flex-container-centered">
-            <img src={{member.image}} alt="zdjęcie {{member.name}}">
+            <img src={{member.img}} alt="zdjęcie {{member.first_name}}">
         </div>
         <div class="card-info">
-            <h4><b>{{member.name}} {{member.surname}}</b></h4>
-            <p>Sprzęt: {{member.instrument}}</p>
-            <p>Ciekawostka: "{{member.fact}}"</p>
+            <h4><b>{{member.first_name}} {{member.last_name}}</b></h4>
+            <p>Sprzęt: {{member.instruments}}</p>
+            <p>Ciekawostka: "{{member.trivia}}"</p>
         </div>
     </div>
 {% endfor %}

@@ -10,11 +10,11 @@
     {% for album in albums %}
     <div class="card">
         <div class="flex-container-centered">
-            <img src={{album.image}} alt="okładka {{album.title}}">
+            <img src={{album.img}} alt="okładka {{album.title}}">
         </div>
         <div class="card-info">
             <h4><b>{{album.title}}</b></h4>
-            <p>Rok wydania: {{album.year}}</p>
+            <p>Rok wydania: {{album.year_published}}</p>
         </div>
     </div>
 {% endfor %}

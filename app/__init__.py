@@ -8,7 +8,7 @@
 import os
 
 from flask import Flask, render_template, request
-
+from app.db import get_db
 
 def create_app(test_config=None):
     # create and configure the app
@@ -41,19 +41,14 @@ def create_app(test_config=None):
 
     @app.route("/members")
     def members():
-        members = [
-            {"name": "Arleta", "surname": "Marleta", "image": "/static/img/arleta.png", "instrument": "gitara", "fact": "Nie lubię słodyczy"},
-            {"name": "Marek", "surname": "Tralek", "image": "/static/img/marek.png", "instrument": "perkusja", "fact": "Nigdy niczego nie złamałem"},
-            {"name": "Karol", "surname": "Barol", "image": "/static/img/karol.png", "instrument": "wokal", "fact": "Pochodzę z Hiszpanii"},
-        ]
+        db = get_db()
+        members = db.execute('SELECT * FROM members ORDER BY id ASC').fetchall()
         return render_template("members.html", request=request, members=members)
 
     @app.route("/discography")
     def discography():
-        albums = [
-            {"id": "1", "title": "Nie ma letko", "year": "2021", "image": "/static/img/album1.png"},
-            {"id": "2", "title": "Kiedyś to było", "year": "2020", "image": "/static/img/album2.jpg"},
-        ]
+        db = get_db()
+        albums = db.execute('SELECT * FROM albums ORDER BY year_published DESC').fetchall()
         return render_template("discography.html", request=request, albums=albums)
     
     from . import db

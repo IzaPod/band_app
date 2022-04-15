@@ -14,7 +14,7 @@ CREATE TABLE members (
 CREATE TABLE albums (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   title TEXT UNIQUE NOT NULL,
-  year_published NUMBER NOT NULL,
+  year_published INTEGER NOT NULL,
   img TEXT NOT NULL
 );
 
@@ -31,4 +31,10 @@ INSERT INTO members
 VALUES
     ("Arleta", "Marleta", "gitara", "/static/img/arleta.png", "Nie lubię słodyczy"),
     ("Marek", "Tralek", "perkusja", "/static/img/marek.png", "Nigdy niczego nie złamałem"),
-    ("Karol", "Barol", "wokal", "/static/img/karol.png", "Pochodzę z Hiszpanii")
+    ("Karol", "Barol", "wokal", "/static/img/karol.png", "Pochodzę z Hiszpanii (nikt nie wierzy)");
+
+INSERT INTO albums 
+    (title, year_published, img)
+VALUES
+    ("Nie ma letko", 2021, "/static/img/album1.png"),
+    ("Kiedyś to było", 2020, "/static/img/album2.jpg");
