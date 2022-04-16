@@ -1,18 +1,15 @@
-# from flask import Flask, app, render_template, request
-
-# app = Flask(__name__)
-
-# if __name__ == "__main__":
-#     app.run(debug=True)
-
 import os
 
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, abort
 from app.db import get_db
+
+def page_not_found(e):
+    return render_template('404.html'), 404
 
 def create_app(test_config=None):
     # create and configure the app
     app = Flask(__name__, instance_relative_config=True)
+    app.register_error_handler(404, page_not_found)
     app.config.from_mapping(
         SECRET_KEY='dev',
         DATABASE=os.path.join(app.instance_path, 'band_app.sqlite'),
@@ -51,6 +48,18 @@ def create_app(test_config=None):
         albums = db.execute('SELECT * FROM albums ORDER BY year_published DESC').fetchall()
         return render_template("discography.html", request=request, albums=albums)
     
+    @app.route("/discography/<int:album_id>")
+    def album(album_id):
+        db = get_db()
+        
+        album = db.execute('SELECT * FROM albums WHERE id=?', (album_id,)).fetchall()
+        if not album:
+            abort(404)
+
+        songs = db.execute('SELECT * FROM songs WHERE album_id=? ORDER BY id ASC', (album_id,)).fetchall()
+        return render_template("album.html", request=request, album=album[0], songs=songs)
+
+
     from . import db
     db.init_app(app)
 

@@ -1,0 +1,33 @@
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    margin: 20px 5px;
+    max-width: 600px;
+    counter-reset: noElm;
+}
+
+th {
+    background-color: #a8c4c0;
+}
+
+td, th {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dbe4e1;
+}
+
+tbody tr {
+    counter-increment: noElm;
+}
+
+td:nth-of-type(1):before {
+    content: counter(noElm);
+}
+
+img {
+    max-width: 300px;
+}

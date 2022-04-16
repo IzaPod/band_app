@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block head_elements %}
+<link rel="stylesheet" href="{{ url_for('static', filename='style/album.css') }}">
+{% endblock %}
+
+{% block content %}
+<h1>{{album.title}} ({{album.year_published}})</h1>
+<img src="{{album.img}}" alt="okładka albumu {{album.title}}" />
+<table>
+    <thead>
+        <tr>
+            <th>Numer</th>
+            <th>Tytuł</th>
+            <th>Czas trwania</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for song in songs %}
+            <tr>
+                <td>.</td>
+                <td>{{song.title}}</td>
+                <td>{{song.duration}}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

@@ -21,7 +21,7 @@ CREATE TABLE albums (
 CREATE TABLE songs (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   album_id INTEGER NOT NULL,
-  title TIMESTAMP NOT NULL,
+  title TEXT NOT NULL,
   duration TEXT NOT NULL,
   FOREIGN KEY (album_id) REFERENCES albums (id)
 );
@@ -36,25 +36,37 @@ VALUES
 INSERT INTO albums 
     (id, title, year_published, img)
 VALUES
-    (1, "Nie ma letko", 2021, "/static/img/album1.png"),
-    (0, "Kiedyś to było", 2020, "/static/img/album2.jpg");
+    (2, "Nie ma letko", 2021, "/static/img/album1.png"),
+    (1, "Kiedyś to było", 2020, "/static/img/album2.jpg"),
+    (0, "Dobrze jak jest dobrze", 2018, "/static/img/album3.jpg");
 
 INSERT INTO songs 
     (album_id, title, duration)
 VALUES
-    (0, "Intro", "3:05"),
-    (0, "No ja nie wiem", "5:34"),
-    (0, "Taka ta melodia", "3:33"),
-    (0, "Tęskno za ludźmi", "2:10"),
-    (0, "Rify na klify", "15:45"),
-    (0, "Na koniec", "21:37");
+    (0, "Moim zdaniem to nie ma tak", "2:50"),
+    (0, "Że dobrze albo że nie dobrze", "3:03"),
+    (0, "Gdybym miał powiedzieć", "3:53"),
+    (0, "Co cenię w życiu najbardziej", "4:06"),
+    (0, "Powiedziałbym", "3:23"),
+    (0, "Ludzi", "4:01"),
+    (0, "Znaczy... marchew", "4:20");
 
 INSERT INTO songs 
     (album_id, title, duration)
 VALUES
-    (0, "Na dobry początek", "2:15"),
-    (0, "Wysoki sądzie", "3:54"),
-    (0, "Wnoszę o uchylenie okna", "4:15"),
-    (0, "Uchylam", "3:32"),
-    (0, "Teraz siedzę", "4:59"),
-    (0, "I tak to się żyje w tym kraju", "4:20");
+    (1, "Intro", "3:05"),
+    (1, "No ja nie wiem", "5:34"),
+    (1, "Taka ta melodia", "3:33"),
+    (1, "Tęskno za ludźmi", "2:10"),
+    (1, "Rify na klify", "15:45"),
+    (1, "Na koniec", "21:37");
+
+INSERT INTO songs 
+    (album_id, title, duration)
+VALUES
+    (2, "Na dobry początek", "2:15"),
+    (2, "Wysoki sądzie", "3:54"),
+    (2, "Wnoszę o uchylenie okna", "4:15"),
+    (2, "Uchylam", "3:32"),
+    (2, "Teraz siedzę", "4:59"),
+    (2, "I tak to się żyje w tym kraju", "4:20");
