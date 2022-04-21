@@ -1,7 +1,7 @@
 import os
 
 from flask import Flask, render_template, request, abort
-from app.db import get_db
+from bandapp.db import get_db
 
 def page_not_found(e):
     return render_template('404.html'), 404
