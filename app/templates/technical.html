@@ -2,10 +2,39 @@
 
 {% block content %}
 <div class="centered-container">
-    <h2>Uzasadnienie technologii</h2>
-
+    <h2>O projekcie</h2>
     <p>
-        Flask został wybrany...
+        Projekt przedstawia bardzo prostą stronę reprezentującą zespół muzyczny. 
+        Na stronie głównej i w zakładce "O nas" można dowiedzieć się o historii i założeniach zespołu.
+        W razie zainteresowania szczegóły oferują kolejne zakładki przedstawiające kim są poszczególni 
+        członkowie lub co składa się na ich dyskografię - warto przejrzeć albumy i ich bogaty repertuar.  
+    </p>
+    <p>
+        Strona przedstawia swego rodzaju początki - można na niej jedynie czytać, ale nie pisać.
+        Jest ona jednak podłożem, które można rozbudować w dowolny sposób w zależności od potrzeb. 
+        Potencjalne kolejne kroki to chociażby dodanie możliwości zostawiania komentarzy i pytań przez fanów 
+        (np. w formie zakładki Forum lub Kontakt, ewentualnie jako miejsce na komentarze pod albumami)
+        lub dodanie możliwości kupna płyt i gadżetów.
+    </p>
+    <p>
+        Obecnie strona jest niczym MVP dla klienta stawiającego pierwsze kroki na rynku.
+    </p>
+
+    <h2>Techniczne aspekty</h2>
+    <p>
+        Projekt został stworzony przy użyciu Flaska, jako że oferuje on możliwość relatywnie prostej
+        implementacji stron internetowych, do tego posiada szeroki zakres bibliotek pythonowych oraz
+        rozbudowaną dokumentację. Pozwolił on również bezproblematycznie stworzyć szablony HTMLowe
+        ostylowane w czystym css, co zapewniło, że wymagania projektu co do tych dwóch technologii
+        powinny być zapewnione bez większych problemów, które mogłyby się pojawić przy użyciu
+        nowszych technologii takich jak Vue czy SASS. Styl i struktura stron jest prosta i wizualnie 
+        przejrzysta, a wszystkie obrazki posiadają tekst alternatywny.
+    </p>
+    <p>
+        Dane na temat członków zespołu i dyskografia znajdują się w prostej bazie Sqlite. 
+        Można ją rozbudować w przyszłości, gdy wymagania się zwiększą, lub też wymienić na inną, taką jak
+        MySql, co nie powinno stanowić większego problemu z punktu widzenia aplikacji i wymagać jedynie
+        zmiany danych potrzebnych do połączenia z bazą.
     </p>
 </div>
 {% endblock %}
