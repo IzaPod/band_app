@@ -54,12 +54,14 @@ VALUES
 INSERT INTO songs 
     (album_id, title, duration)
 VALUES
-    (1, "Intro", "3:05"),
-    (1, "No ja nie wiem", "5:34"),
-    (1, "Taka ta melodia", "3:33"),
-    (1, "Tęskno za ludźmi", "2:10"),
-    (1, "Rify na klify", "15:45"),
-    (1, "Na koniec", "21:37");
+    (1, "Bronili się 9 długich dni", "9:00"),
+    (1, "To nie ma z tym nic wspólnego", "3:15"),
+    (1, "Zaraz będzie ciemno", "5:34"),
+    (1, "A Adama jak zwykle nie ma", "4:03"),
+    (1, "Ona przyszła stamtąd gdzie wszyscy spadają", "15:45"),
+    (1, "Napisałem wiersz: Nie-bo", "3:33"),
+    (1, "Ładny", "5:25"),
+    (1, "Nie jestem pewien końcówki", "21:37");
 
 INSERT INTO songs 
     (album_id, title, duration)
